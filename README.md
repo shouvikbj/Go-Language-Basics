@@ -1,1 +1,3 @@
-# Go Language Basics from #The Net Ninja
+# Go Language Basics from
+
+## The Net Ninja

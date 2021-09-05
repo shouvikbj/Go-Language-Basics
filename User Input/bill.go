@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 type bill struct {
@@ -26,7 +25,7 @@ func newBill(name string) bill {
 
 // format the bill
 func (b *bill) format() string {
-	fs := "Bill Breakdown: \n\n"
+	fs := "Bill Breakdown: \n"
 	var total float64 = 0
 
 	// list items
@@ -54,15 +53,4 @@ func (b *bill) updateTip(tip float64) {
 func (b *bill) addItem(name string, price float64) {
 	b.items[name] = price
 	// Go will automatically convert the above line to "(*b).items[name] = price"
-}
-
-// save bill
-func (b *bill) save() {
-	data := []byte(b.format())
-
-	err := os.WriteFile("bills/"+b.name+".txt", data, 0644)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("Bill was saved to file")
 }

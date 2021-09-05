@@ -1,0 +1,4 @@
+To run all the files and to get proper output you need to run the below line in your terminal
+-
+-
+~ go run main.go greetings.go

@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"math/rand"
 	"net/http"
@@ -104,6 +105,7 @@ func main() {
 	r.HandleFunc("/books/{id}", deleteBook).Methods("DELETE")
 
 	// Start server
+	fmt.Println("Server running at http://localhost:8000/")
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
 
